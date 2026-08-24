@@ -1,0 +1,65 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam nodesep 30
+skinparam ranksep 35
+hide empty members
+
+class SedeOlimpica {
+  - nombre: String
+  - presupuestoAproximado: double
+  - numeroComplejos: int
+}
+
+abstract class ComplejoDeportivo {
+  - nombre: String
+  - localizacion: String
+  - jefeOrganizacion: String
+  - areaOcupadaM2: double
+}
+
+class ComplejoUnicoDeporte {
+  - deportePrincipal: String
+}
+
+class ComplejoPolideportivo {
+  - cantidadCanchas: int
+}
+
+ComplejoDeportivo <|-- ComplejoUnicoDeporte
+ComplejoDeportivo <|-- ComplejoPolideportivo
+
+class AreaDesignada {
+  - nombre: String
+  - ubicacion: String
+}
+
+class Deporte {
+  - nombre: String
+}
+
+class Evento {
+  - nombre: String
+  - fecha: LocalDate
+  - duracionMinutos: int
+  - numeroParticipantes: int
+}
+
+class Comisario {
+  - nombre: String
+  - dni: String
+}
+
+class Material {
+  - nombre: String
+  - tipo: String
+}
+
+' Relaciones
+SedeOlimpica "1" *-- "1..*" ComplejoDeportivo : compone
+ComplejoDeportivo "1" *-- "1..*" AreaDesignada : posee
+AreaDesignada "1..*" -- "1" Deporte : asignada a
+ComplejoDeportivo "1" *-- "0..*" Evento : celebra
+Evento "0..*" -- "1..*" Comisario : supervisa
+Evento "1" *-- "0..*" Material : requiere
+
+@enduml
