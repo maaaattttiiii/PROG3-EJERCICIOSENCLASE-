@@ -1,0 +1,75 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>460</x><y>220</y><w>130</w><h>60</h></coordinates><panel_attributes>Museo
+--
+- id_museo: Long
+- nombre: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>410</y><w>150</w><h>240</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+ObjetoDeArte
+--
+- id_objeto: Long
+- titulo: String
+- descripcion: String
+- anoCreacion: Date
+- paisOrigen: String
+- cultura: String
+- epoca: String
+- esPrestamo: Boolean
+- fechaAdq: Date
+- coste: Double
+- enExposicion: Boolean
+- fechaPrestamo: Date
+- fechaDevolucion: Date</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>760</x><y>380</y><w>150</w><h>150</h></coordinates><panel_attributes>Artista
+--
+- id_artista: Long
+- nombre: String
+- fechaNacimiento: Date
+- fechaDeuncion: Date
+- paisOrigen: String
+- epoca: String
+- estiloPrincipal: String
+- descripcion: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>210</y><w>130</w><h>90</h></coordinates><panel_attributes>Exposicion
+--
+- id_exposicion: Long
+- nombre: String
+- fechaInicio: Date
+- fechaFin: Date</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>770</x><y>580</y><w>130</w><h>60</h></coordinates><panel_attributes>Categoria
+--
+- id_categoria: Long
+- nombre: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>440</y><w>160</w><h>140</h></coordinates><panel_attributes>ColleccionDeObras
+--
+- id_coleccion: Long
+- nombre: String
+- tipo: String
+- descripcion: String
+- direccion: String
+- telefono: String
+- personaContacto: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>270</y><w>50</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..N</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>810</y><w>130</w><h>80</h></coordinates><panel_attributes>Pintura
+--
+- tipoPintura: String
+- soporte: String
+- estilo: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>870</y><w>130</w><h>90</h></coordinates><panel_attributes>Escultura
+--
+- material: String
+- altura: Double
+- peso: Double
+- estilo: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>700</x><y>900</y><w>100</w><h>50</h></coordinates><panel_attributes>Otros
+--
+- tipo: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>640</y><w>30</w><h>250</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>640</y><w>150</w><h>280</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;130;260</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>640</y><w>190</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>500</y><w>190</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=0..N
+pertenece a</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>240</y><w>290</w><h>220</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..N
+intercambia</panel_attributes><additional_attributes>270;20;10;20;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>240</y><w>190</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2= 0..N
+organiza</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>450</y><w>190</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=0..N
+m2=1
+crea</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>290</y><w>190</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
+m1=1..N
+m2=1..N
+exhibe</panel_attributes><additional_attributes>10;120;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>590</y><w>200</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=0..N
+m2=1..N
+</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element></diagram>
