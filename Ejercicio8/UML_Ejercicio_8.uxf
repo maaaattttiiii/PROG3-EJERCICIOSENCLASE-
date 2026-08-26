@@ -1,0 +1,83 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>1160</x><y>552</y><w>224</w><h>160</h></coordinates><panel_attributes>/Persona/
+--
++id : String
++nombre : String
++direccion: String
++telefono : String
+--
+#Persona()
++getNombre(): String
++setNombre(n: String)
++getDireccion(): String
++setDireccion(d: String)
++getTelefono(): String
++setTelefono(t: String)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>832</x><y>712</y><w>176</w><h>88</h></coordinates><panel_attributes>Piloto
+--
++nroLicencia: String
++restricciones: List : &lt;String&gt;
+--
++getNroLicencia(): String
++isAutorizado(tipo:TipoAvion): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>704</x><y>576</y><w>352</w><h>88</h></coordinates><panel_attributes>Mecanico
+--
++salario: float
++turno: String
+--
++getSalario(): float
++idarMantenimiento(avion:Avion)+autorizarMantenimiento(tipo: TipoAvion)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>848</x><y>480</y><w>176</w><h>72</h></coordinates><panel_attributes>Propietario
+--
++esCompania: boolean
++nroRegistro: String
+--
++isCompania(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1016</x><y>512</y><w>160</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>180;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1048</x><y>616</y><w>128</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1000</x><y>656</y><w>176</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>200;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>576</x><y>496</y><w>288</w><h>24</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;340;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>408</x><y>432</y><w>176</w><h>88</h></coordinates><panel_attributes>Servicio
+--
++fecha: Date
++horasInvertidas: int
++tipoTrabajo: String
+--
++equals(o:Object)
++hashCode(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>576</x><y>512</y><w>144</w><h>104</h></coordinates><panel_attributes>lt=&lt;-
+m1=1..*
+dar_mantenimiento
+m2=1..*</panel_attributes><additional_attributes>10;10;160;110</additional_attributes></element><element><id>Relation</id><coordinates><x>472</x><y>512</y><w>376</w><h>264</h></coordinates><panel_attributes>lt=&lt;-
+m1=1..*
+autorizado_volar
+m2=N</panel_attributes><additional_attributes>10;10;10;300;450;300</additional_attributes></element><element><id>UMLClass</id><coordinates><x>848</x><y>272</y><w>176</w><h>128</h></coordinates><panel_attributes>Avion
+--
++ matricula: String
++ fechaAdquisicion: Date
++enServicio: boolean
+--
++getMatricula(): String
++setMatricula(m:String)
++actualizarHorasVuelo(h: int)
++equals(o: Object)
++hasCode(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>376</y><w>384</w><h>72</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=N
+m2=1</panel_attributes><additional_attributes>10;70;10;10;460;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1184</x><y>312</y><w>176</w><h>72</h></coordinates><panel_attributes>TipoAvion
+--
++nroModelo: String
++capacidad: int
++peso: float
+--
++getCapacidad(): int
++getPeso(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1264</x><y>376</y><w>112</w><h>192</h></coordinates><panel_attributes>lt=&lt;-
+m2=1..*
+dar_mantenimiento</panel_attributes><additional_attributes>10;220;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1016</x><y>336</y><w>184</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1..*
+m2=1
+</panel_attributes><additional_attributes>210;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>848</x><y>104</y><w>176</w><h>72</h></coordinates><panel_attributes>Hangar
+--
++numero: int
++capacidad: int
++ubicacion: String
+--
++getUbicacion(): String
++almacenarAvion(a:Avion)
++retirarAvion(a:Avion)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>928</x><y>168</y><w>40</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=0..1
+m2=0..*</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>936</x><y>392</y><w>48</w><h>104</h></coordinates><panel_attributes>lt=&lt;-
+m1=1..*
+posee
+m2=1</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element></diagram>
