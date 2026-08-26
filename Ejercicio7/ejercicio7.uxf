@@ -1,0 +1,51 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>100</x><y>10</y><w>180</w><h>90</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+Participante
+--
+# codigoPruebaDorsal: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>150</y><w>150</w><h>90</h></coordinates><panel_attributes>Esquiador
+--
+- DNI: String
+- nombre: String
+- fechaNacimiento: Date
+- /edad: Integer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>10</y><w>200</w><h>80</h></coordinates><panel_attributes>Equipo
+--
+- codigo: String
+- entrenador: String
+- /cantidadEsquiadores: Integer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>130</y><w>180</w><h>70</h></coordinates><panel_attributes>Federacion
+--
+- nombre: String
+- /numeroFederados: Integer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>450</y><w>180</w><h>140</h></coordinates><panel_attributes>Estacion
+--
+- codigoIdentificativo: String
+- nombre: String
+- contactos: List&lt;String&gt;
+- direccion: String
+- telefono: String
+- /kmEsquiables: Float
+- /numPistas: Integer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>430</y><w>190</w><h>90</h></coordinates><panel_attributes>Pista
+--
+- numeroCorrelativo: Integer
+- longitudKm: Float
+- nivelDificultadColor: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>280</y><w>110</w><h>70</h></coordinates><panel_attributes>Campeonato
+--
+- nombre: String
+- anio: Integer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>280</y><w>170</w><h>110</h></coordinates><panel_attributes>Prueba
+--
+- nombre: String
+- tipo: String
+- fechasPrevistas: List&lt;Date&gt;
+- /vencedor: Participante
+- /tiempoVencedor: Float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>430</y><w>190</w><h>80</h></coordinates><panel_attributes>Inscripcion
+--
+- fechasCompeticion: List&lt;Date&gt;
+- tiempoEmpleado: Float
+- posicion: Integer</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>90</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>40</y><w>130</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>80</y><w>260</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1,n</panel_attributes><additional_attributes>10;110;220;110;220;10</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>300</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1,n</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>470</y><w>170</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1,n</panel_attributes><additional_attributes>10;30;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>190</y><w>440</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+m1=1,n
+m2=1</panel_attributes><additional_attributes>10;30;410;30;410;10</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>160</y><w>480</w><h>420</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;400;460;400;460;10;350;10</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>370</y><w>50</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1,n</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>380</y><w>200</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>180;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>40</x><y>60</y><w>300</w><h>330</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>280;310;10;310;10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>360</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element></diagram>
