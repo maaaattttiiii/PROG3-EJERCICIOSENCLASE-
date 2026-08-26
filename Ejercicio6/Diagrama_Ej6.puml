@@ -1,0 +1,95 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam nodesep 25
+skinparam ranksep 30
+hide empty members
+
+class ComunidadAutonoma {
+  - nombre: String
+}
+
+class Organismo {
+  - nombre: String
+}
+
+class ParqueNacional {
+  - nombre: String
+  - fechaDeclaracion: LocalDate
+}
+
+class Area {
+  - nombre: String
+  - extensionKm2: double
+}
+
+abstract class Especie {
+  - nombreCientifico: String
+  - nombreVulgar: String
+  - nroIndividuos: int
+}
+
+class EspecieVegetal {
+  - tieneFloracion: boolean
+  - periodoFloracion: String
+}
+
+class EspecieAnimal {
+  - periodoCelo: String
+  - tipoAlimentacion: String
+}
+
+abstract class Persona {
+  - dni: String
+  - nombre: String
+  - direccion: String
+}
+
+class Visitante {
+  - profesion: String
+}
+
+class Personal {
+  - sueldo: double
+  - nroSeguridadSocial: String
+}
+
+class Alojamiento {
+  - nombre: String
+  - capacidad: int
+}
+
+class Excursion {
+  - codigo: String
+  - fechaHora: LocalDateTime
+}
+
+class ProyectoInvestigacion {
+  - nombre: String
+  - presupuesto: double
+}
+
+' Herencias
+Especie <|-- EspecieVegetal
+Especie <|-- EspecieAnimal
+Persona <|-- Visitante
+Persona <|-- Personal
+
+' Relaciones núcleo
+ComunidadAutonoma "1..*" -- "1..*" ParqueNacional
+Organismo "1" --> "0..*" ParqueNacional
+ParqueNacional "1" *-- "1..*" Area
+ParqueNacional "1" *-- "0..*" Alojamiento
+ParqueNacional "1" o-- "1..*" Personal
+
+Area "1..*" -- "1..*" Especie : residen
+EspecieAnimal "0..*" --> "0..*" Especie : alimento
+
+Alojamiento "1..*" -- "0..*" Excursion : organiza
+Excursion "0..*" -- "0..*" Visitante : inscriptos
+Visitante "0..*" -- "0..*" Alojamiento : hospeda
+
+Personal "0..*" -- "1" Area : vigila (Guarda)
+Personal "0..*" -- "0..*" ProyectoInvestigacion : investiga
+ProyectoInvestigacion "0..*" -- "1..*" Especie : analiza
+
+@enduml
