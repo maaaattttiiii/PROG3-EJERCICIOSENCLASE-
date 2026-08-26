@@ -1,0 +1,35 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+
+class Continente {
+  - nombre: String
+}
+
+class Pais {
+  - nombre: String
+}
+
+class Provincia {
+  - nombre: String
+}
+
+class Ciudad {
+  - nombre: String
+}
+
+' Relaciones Jerárquicas (Todo-Parte)
+Continente "1" o-- "1..*" Pais : se localiza en <
+Pais "1" *-- "1..*" Provincia : tiene >
+Provincia "1" *-- "1..*" Ciudad : tiene >
+
+' Relaciones de Capitales
+Pais "1" --> "1" Ciudad : capital >
+Provincia "1" --> "1" Ciudad : capital >
+
+' Relaciones de Límites / Fronteras
+Pais "0..*" -- "0..*" Pais : limita con
+Provincia "0..*" -- "0..*" Provincia : limita con (mismo país)
+Provincia "0..*" -- "0..*" Pais : limita con (otro país)
+
+@enduml
