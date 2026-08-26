@@ -1,0 +1,27 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>310</x><y>500</y><w>280</w><h>80</h></coordinates><panel_attributes>Pais
+--
+- nombre: String
+--
++ obtenerCiudadesEnDeficit(): List&lt;Ciudad&gt;
++ obtenerProvinciasEnDeficit(): List&lt;Provincia&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>320</y><w>260</w><h>80</h></coordinates><panel_attributes>Provincia
+--
+- nombre: String
+--
++ obtenerCiudadesEnDeficit(): List&lt;Ciudad&gt;
++ tieneMayoriaCiudadesEnDeficit(): Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>40</y><w>210</w><h>190</h></coordinates><panel_attributes>Ciudad
+--
+- nombre: String
+- cantidadHabitantes: Integer
+- imp1: Float
+- imp2: Float
+- imp3: Float
+- imp4: Float
+- imp5: Float
+- gastoMantenimiento: Float
+--
++ calcularRecaudacionTotal(): Float
++ estaEnDeficit(): Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>220</y><w>50</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1,n
+m2=1</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>390</y><w>50</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1,n
+m2=1</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element></diagram>
